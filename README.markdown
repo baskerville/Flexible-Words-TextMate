@@ -1,4 +1,4 @@
-# Flexible Words -- A TextMate Plugin
+# Flexible Words
 This plugin makes it possible for a TextMate bundle to override the default “Word Characters” option.
 
 ## Usage
