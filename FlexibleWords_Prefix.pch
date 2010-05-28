@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'FlexibleWords' target in the 'FlexibleWords' project.
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
