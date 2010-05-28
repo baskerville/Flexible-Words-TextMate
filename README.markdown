@@ -8,8 +8,8 @@ You must, for the moment, manually invoke the plugin on the front document (the 
 ## Example
 Common Lisp settings:
 
-`shellVariables = (
-		{	name = 'TM_WORD_CHARACTERS';
-			value = '<=>+-*/';
-		},	
-);`
+    shellVariables = (
+        { name = 'TM_WORD_CHARACTERS';
+          value = '<=>+-*/';
+        },  
+    );
