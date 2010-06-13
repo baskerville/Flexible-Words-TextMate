@@ -14,7 +14,6 @@
   } else {
     return [self FW_isWordCharacter:chr];
   }	
-  
 }
 
 @end

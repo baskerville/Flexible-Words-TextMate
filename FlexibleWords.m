@@ -6,7 +6,7 @@
 //  '    ' `-' ' ` ' `-' ' `-'   ' '   `-' '   `-' `-'
 //  
 //  Bastien Dejean
-//  May 2010
+//  June 2010
 //
 
 #import "FlexibleWords.h"
@@ -15,8 +15,8 @@
 #import "objc/runtime.h"
 
 @interface FlexibleWords (Private_FlexibleWords)
-- (void)installMenuItem;
 - (void)dealloc;
+- (void)installMenuItem;
 @end
 
 @implementation FlexibleWords
@@ -37,36 +37,25 @@ static FlexibleWords *sharedInstance = nil;
 {
   if (self = [super init]) {          
     
-    [self installMenuItem];
+    [self installMenuItem];    
+	[self updateWordCharactersDictionary];	
         
     [OakTextView jr_swizzleMethod:@selector(setCurrentMode:) withMethod:@selector(FW_setCurrentMode:) error:NULL];
-    [OakTextView jr_swizzleMethod:@selector(preferencesDidChange:) withMethod:@selector(FW_preferencesDidChange:) error:NULL];    
-    [OakWordCharacters jr_swizzleMethod:@selector(isWordCharacter:) withMethod:@selector(FW_isWordCharacter:) error:NULL];
+    [OakWindow jr_swizzleMethod:@selector(becomeMainWindow) withMethod:@selector(FW_becomeMainWindow) error:NULL];
+    
+	[OakWordCharacters jr_swizzleMethod:@selector(isWordCharacter:) withMethod:@selector(FW_isWordCharacter:) error:NULL];
   
   }
   return self;  
 }
 
-- (void)installMenuItem
+- (void) updateWordCharactersDictionary
 {
-  if(windowMenu = [[[[NSApp mainMenu] itemWithTitle:@"Edit"] submenu] retain])
-  {
-    NSArray* items = [windowMenu itemArray];
-    
-    int index = 0;
-    for (NSMenuItem* item in items)
-    {
-      if ([[item title] isEqualToString:@"Special Characters…"])
-      {
-        index = [items indexOfObject:item]+1;
-      } 
-    }
-    updateFlexibleWordsMenuItem = [[NSMenuItem alloc] initWithTitle:@"Flexible Words" action:@selector(updateWordCharacters) keyEquivalent:@"u"];
-    [updateFlexibleWordsMenuItem setKeyEquivalentModifierMask:NSControlKeyMask|NSCommandKeyMask];
-    [updateFlexibleWordsMenuItem setTarget:self];
-    [windowMenu insertItem:updateFlexibleWordsMenuItem atIndex:index];
-  }
+	NSString* plistPath = [@"~/.TM_WordCharacters.plist" stringByExpandingTildeInPath];
+	wordCharactersDictionary = [[NSDictionary alloc] initWithContentsOfFile:plistPath];	
+	[self updateWordCharacters];
 }
+
 
 - (NSString*)getWordCharacters
 {
@@ -80,17 +69,25 @@ static FlexibleWords *sharedInstance = nil;
 
 - (void)updateWordCharacters
 {
-  NSDictionary* envVars = [[NSApp targetForAction:@selector(allEnvironmentVariables)] allEnvironmentVariables];
-  wordCharacters = [envVars objectForKey:@"TM_WORD_CHARACTERS"];
-  
-  if (wordCharacters) {
-    NSLog(@"wordCharacters: %@", wordCharacters);
-    NSMutableCharacterSet *workingSet;
-    workingSet = [[NSCharacterSet alphanumericCharacterSet] mutableCopy];
-    [workingSet addCharactersInString:wordCharacters];
-    finalCharSet = [workingSet copy];
-    [workingSet release];
-  }    
+	NSString* mode;
+	object_getInstanceVariable([NSApp targetForAction:@selector(document)], "currentMode", (void**)&mode);
+	[self updateWordCharactersWithMode:mode];		
+}
+
+- (void)updateWordCharactersWithMode:(NSString*)mode
+{
+	if (mode) {
+		wordCharacters = [wordCharactersDictionary objectForKey:mode];
+
+		if (wordCharacters) {
+			// NSLog(@"---> WordCharacters: %@", wordCharacters);
+			NSMutableCharacterSet *workingSet;
+			workingSet = [[NSCharacterSet alphanumericCharacterSet] mutableCopy];
+			[workingSet addCharactersInString:wordCharacters];
+			finalCharSet = [workingSet copy];
+			[workingSet release];
+		}	
+	}
 }
 
 - (void)dealloc
@@ -98,6 +95,30 @@ static FlexibleWords *sharedInstance = nil;
   [sharedInstance release];
   sharedInstance = nil;
   [super dealloc];
+}
+
+- (void)installMenuItem
+{
+	NSMenu* windowMenu;
+
+	if (windowMenu = [[[[NSApp mainMenu] itemWithTitle:@"Bundles"] submenu] retain])
+	{
+		NSArray* items = [windowMenu itemArray];
+
+		int index = 0;
+		for (NSMenuItem* item in items)
+		{
+			if ([[item title] isEqualToString:@"Select Bundle Item…"])
+			{
+				index = [items indexOfObject:item]+1;
+			} 
+		}
+
+		NSMenuItem* mi = [[NSMenuItem alloc] initWithTitle:@"Update FlexibleWords" action:@selector(updateWordCharactersDictionary) keyEquivalent:@"u"];
+		[mi setKeyEquivalentModifierMask:NSControlKeyMask|NSCommandKeyMask];
+		[mi setTarget:self];
+		[windowMenu insertItem:mi atIndex:index];
+	}
 }
 
 + (id)allocWithZone:(NSZone *)zone
@@ -128,7 +149,7 @@ static FlexibleWords *sharedInstance = nil;
 
 - (void)release
 {
-    //do nothing
+	;
 }
 
 - (id)autorelease

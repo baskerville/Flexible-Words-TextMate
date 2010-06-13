@@ -304,14 +304,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>FlexibleWords.m</string>
+								<string>NSWindow+FlexibleWords.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -319,25 +317,29 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>FlexibleWords.m</string>
+										<string>NSWindow+FlexibleWords.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9F5F4BEA11B0596300BED343</string>
+										<string>9FDDF0BC11C5077C00D9BA4D</string>
 										<key>history</key>
 										<array>
 											<string>9F23111511AEA58700447964</string>
 											<string>9F23114A11AEA73400447964</string>
 											<string>9F23114B11AEA73400447964</string>
-											<string>9F2311E011AF008D00447964</string>
-											<string>9F2311E111AF008D00447964</string>
-											<string>9F2311E211AF008D00447964</string>
 											<string>9F2311E311AF008D00447964</string>
-											<string>9F23120711AF151400447964</string>
-											<string>9FEB78EC11AFB5F200D18061</string>
 											<string>9FEB78ED11AFB5F200D18061</string>
-											<string>9FEB791311AFEDCA00D18061</string>
-											<string>9F8F547D11B055FF0027CD68</string>
+											<string>9FC9036F11C395440091AFA0</string>
+											<string>9FC903E511C3D4530091AFA0</string>
+											<string>9FDDF06711C4C6AB00D9BA4D</string>
+											<string>9FDDF09811C4FE4300D9BA4D</string>
+											<string>9FDDF0B411C5042000D9BA4D</string>
+											<string>9FDDF0B511C5042000D9BA4D</string>
+											<string>9FDDF0B611C5042000D9BA4D</string>
+											<string>9FDDF0B711C5042000D9BA4D</string>
+											<string>9FDDF0B811C5042000D9BA4D</string>
+											<string>9FDDF0BA11C5077C00D9BA4D</string>
+											<string>9FDDF0BB11C5077C00D9BA4D</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -349,16 +351,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1396, 655}}</string>
+								<string>{{0, 0}, {1396, 616}}</string>
 								<key>RubberWindowFrame</key>
 								<string>33 117 1604 916 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>655pt</string>
+							<string>616pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -369,14 +373,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 660}, {1396, 215}}</string>
+								<string>{{0, 621}, {1396, 254}}</string>
 								<key>RubberWindowFrame</key>
 								<string>33 117 1604 916 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>215pt</string>
+							<string>254pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -395,9 +399,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>9F5F4BE711B0596200BED343</string>
+				<string>9FDDF0AF11C4FE5800D9BA4D</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>9F5F4BE811B0596200BED343</string>
+				<string>9FDDF0B011C4FE5800D9BA4D</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -536,7 +540,7 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>9FE8EBFD11AE9CA1004DAEEA</string>
-		<string>/Users/bloom/Documents/Source/Objective-C/FlexibleWords/FlexibleWords.xcodeproj</string>
+		<string>/Users/bloom/Documents/Source/Objective-C/Flexible-Words-TextMate/FlexibleWords.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>33 117 1604 916 0 0 1920 1058 </string>
@@ -616,7 +620,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>9FE8EBFD11AE9CA1004DAEEA</string>
-				<string>9F5F4BE911B0596200BED343</string>
+				<string>9FDDF0B111C4FE5800D9BA4D</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

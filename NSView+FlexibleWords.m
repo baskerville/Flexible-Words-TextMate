@@ -6,14 +6,10 @@
 
 - (void)FW_setCurrentMode:(id)mode
 {
-    [self FW_setCurrentMode:mode];
-    [[FlexibleWords instance] updateWordCharacters];    
-}
+	[self FW_setCurrentMode:mode];
+	// NSLog(@"--> FW_setCurrentMode: %@", mode);
 
-- (void)FW_preferencesDidChange:(id)sender
-{
-    [self FW_preferencesDidChange:sender];
-    [[FlexibleWords instance] updateWordCharacters];        
+	[[FlexibleWords instance] updateWordCharactersWithMode:mode];    
 }
 
 @end

@@ -13,6 +13,7 @@
 		9F23107911AE9CE900447964 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F23107411AE9CE900447964 /* JRSwizzle.m */; };
 		9F23107A11AE9CE900447964 /* NSObject+FlexibleWords.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F23107611AE9CE900447964 /* NSObject+FlexibleWords.m */; };
 		9F2311BF11AEF2CD00447964 /* NSView+FlexibleWords.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2311BE11AEF2CD00447964 /* NSView+FlexibleWords.m */; };
+		9FC9036311C390AB0091AFA0 /* NSWindow+FlexibleWords.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC9036211C390AB0091AFA0 /* NSWindow+FlexibleWords.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,6 +54,8 @@
 		9F23107711AE9CE900447964 /* TextMate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextMate.h; sourceTree = "<group>"; };
 		9F2311BD11AEF2CD00447964 /* NSView+FlexibleWords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+FlexibleWords.h"; sourceTree = "<group>"; };
 		9F2311BE11AEF2CD00447964 /* NSView+FlexibleWords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+FlexibleWords.m"; sourceTree = "<group>"; };
+		9FC9036111C390AB0091AFA0 /* NSWindow+FlexibleWords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+FlexibleWords.h"; sourceTree = "<group>"; };
+		9FC9036211C390AB0091AFA0 /* NSWindow+FlexibleWords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+FlexibleWords.m"; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +80,8 @@
 				9F23107211AE9CE900447964 /* FlexibleWords.m */,
 				9F23107311AE9CE900447964 /* JRSwizzle.h */,
 				9F23107411AE9CE900447964 /* JRSwizzle.m */,
+				9FC9036111C390AB0091AFA0 /* NSWindow+FlexibleWords.h */,
+				9FC9036211C390AB0091AFA0 /* NSWindow+FlexibleWords.m */,
 				9F23107511AE9CE900447964 /* NSObject+FlexibleWords.h */,
 				9F23107611AE9CE900447964 /* NSObject+FlexibleWords.m */,
 				9F23107711AE9CE900447964 /* TextMate.h */,
@@ -229,6 +234,7 @@
 				9F23107911AE9CE900447964 /* JRSwizzle.m in Sources */,
 				9F23107A11AE9CE900447964 /* NSObject+FlexibleWords.m in Sources */,
 				9F2311BF11AEF2CD00447964 /* NSView+FlexibleWords.m in Sources */,
+				9FC9036311C390AB0091AFA0 /* NSWindow+FlexibleWords.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

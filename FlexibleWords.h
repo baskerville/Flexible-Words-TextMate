@@ -8,12 +8,14 @@
 {
     NSString* wordCharacters;
     NSCharacterSet* finalCharSet;
-    NSMenu* windowMenu;
-    NSMenuItem* updateFlexibleWordsMenuItem;  	  	
+	NSDictionary* wordCharactersDictionary;
 }
+
 + (FlexibleWords*)instance;
 - (id)initWithPlugInController:(id <TMPlugInController>)aController;
+- (void) updateWordCharactersDictionary;
 - (NSString*)getWordCharacters;
 - (NSCharacterSet*)getFinalCharSet;
 - (void)updateWordCharacters;
+- (void)updateWordCharactersWithMode:(NSString*)mode;
 @end

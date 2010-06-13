@@ -1,4 +1,5 @@
 #import <Cocoa/Cocoa.h>
 
-#define OakTextView   					NSClassFromString(@"OakTextView")
-#define OakWordCharacters			  NSClassFromString(@"OakWordCharacters")
+#define OakTextView					NSClassFromString(@"OakTextView")
+#define OakWindow					NSClassFromString(@"OakWindow")
+#define OakWordCharacters			NSClassFromString(@"OakWordCharacters")
